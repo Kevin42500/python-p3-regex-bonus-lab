@@ -1,7 +1,7 @@
 from distutils.filelist import findall
 import re
 
-from regex import my_regex
+from regex import match_string
 
 FINDALL_STRING = """
     It's such a lovely day today.
@@ -17,11 +17,13 @@ class TestRegEx:
 
     def test_matches_its_such_a_lovely_day(self):
         '''matches the string "It's such a lovely day today."'''
-        assert(my_regex.fullmatch("It's such a lovely day today."))
+        assert(match_string("It's such a lovely day today."))
+
 
     def test_matches_some_weather_were_having(self):
         '''matches the string "Some weather we're having today, huh?"'''
-        assert(my_regex.fullmatch("Some weather we're having today, huh?"))
+        assert(match_string("Some weather we're having today, huh?"))
+
 
     def test_matches_maybe_todays_not_my_day(self):
         '''matches the string "Maybe today's just not my day."'''
